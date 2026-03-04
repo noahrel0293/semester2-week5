@@ -17,12 +17,12 @@ int main(void){
 	int hexval;
 	int multiplier = 1;
 	int decival;
+	int tracker = 0;
 
 	printf("Enter a hexadecimal:");
 	fgets(hex, sizeof(hex), stdin);
-
 	// if input contains invalid hex digit
-	for(int k=0; k<(sizeof(hex)-1); k++){
+	for(int k=0; k<(strlen(hex)-1); k++){
 		switch(hex[k]){
 			case '0':
 				break;
@@ -60,14 +60,15 @@ int main(void){
 				printf("Error: Invalid Hexadecimal\n");
 				breakval = true;
 		}
+		tracker = tracker + 1;
 		if(breakval== true){
 			break;
 		}
 
 	}
 	if(breakval == false){
-		for(int i=0; i<(sizeof(hex-1)); i++){
-			switch(hex[7-i]){
+		for(int i=0; i<(strlen(hex)-1); i++){
+			switch(hex[strlen(hex)-2-i]){
 			case '0':
 				hexval = 0;
 				break;
