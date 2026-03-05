@@ -16,11 +16,14 @@ int main(void){
 	bool breakval = false;
 	int hexval;
 	int multiplier = 1;
-	int decival;
-	int tracker = 0;
+	long long decival;
+	int switchval;
+	int forval;
 
 	printf("Enter a hexadecimal:");
 	fgets(hex, sizeof(hex), stdin);
+	//printf("%s\n",hex);
+	//printf("%ld\n", strlen(hex));
 	// if input contains invalid hex digit
 	for(int k=0; k<(strlen(hex)-1); k++){
 		switch(hex[k]){
@@ -60,15 +63,26 @@ int main(void){
 				printf("Error: Invalid Hexadecimal\n");
 				breakval = true;
 		}
-		tracker = tracker + 1;
 		if(breakval== true){
 			break;
 		}
 
 	}
+	if(strlen(hex) == 8){
+		switchval = strlen(hex)-1;
+	}else{
+		switchval = strlen(hex)-2;
+	}
+	if(strlen(hex) == 8){
+		forval = strlen(hex);
+	}else{
+		forval = strlen(hex)-1;
+	}
+
+	//printf("%d\n", switchval);
 	if(breakval == false){
-		for(int i=0; i<(strlen(hex)-1); i++){
-			switch(hex[strlen(hex)-2-i]){
+		for(int i=0; i<(forval); i++){
+			switch(hex[switchval-i]){
 			case '0':
 				hexval = 0;
 				break;
@@ -119,6 +133,12 @@ int main(void){
 				break;
 			}
 			decival = hexval * multiplier;
+			//printf("%d\n", multiplier);
+			//printf("%d\n", i);
+			//printf("%d\n", switchval-i);
+			//printf("%c\n", hex[switchval-i]);
+			//printf("%d\n", hexval);
+			//printf("%lld\n", decival);
 			decimal = decimal + decival;
 			multiplier = multiplier * 16;
 		}
