@@ -15,7 +15,7 @@ int main(void){
 	char hex[9];
 	bool breakval = false;
 	int hexval;
-	int multiplier = 1;
+	long long multiplier = 1;
 	long long decival;
 	int switchval;
 	int forval;
@@ -167,7 +167,7 @@ int main(void){
 			enough with the problem that i don't want to deal with another thing to figure out.*/
 			//printf("%d\n", forval);
 			//printf("%d\n", switchval);
-			//printf("%d\n", multiplier);
+			printf("%lld\n", multiplier);
 			//printf("%d\n", i);
 			//printf("%d\n", switchval-i);
 			//printf("%c\n", hex[switchval-i]);
