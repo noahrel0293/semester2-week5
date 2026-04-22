@@ -167,7 +167,7 @@ int main(void){
 			enough with the problem that i don't want to deal with another thing to figure out.*/
 			//printf("%d\n", forval);
 			//printf("%d\n", switchval);
-			printf("%lld\n", multiplier);
+			//printf("%lld\n", multiplier);
 			//printf("%d\n", i);
 			//printf("%d\n", switchval-i);
 			//printf("%c\n", hex[switchval-i]);
